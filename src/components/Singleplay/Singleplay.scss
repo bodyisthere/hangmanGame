@@ -1,0 +1,297 @@
+.singleplayer {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+    .game {
+        width: 1000px;
+        border: 2px solid white;
+        height: 800px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        &__top {
+            flex-grow: 1;
+            display: flex;
+        }
+        &__field {
+            width: 770px;
+        }
+        &__wrong {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 226px;
+        }
+        &__wrong-text {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        &__wrong-miss {
+            font-size: 20px;
+        }
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+            font-size: 40px;
+        }
+    }
+}
+
+
+.gallows {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    &__line-1 {
+        position: absolute;
+        top: 650px;
+        width: 500px;
+        height: 5px;
+        background: white;
+    }
+    &__line-2 {
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        height:600px;
+        width: 5px;
+        background: white;
+    }
+    &__line-3 {
+        position: absolute;
+        top: 50px;
+        left: 150px;
+        width: 200px;
+        height: 5px;
+        background: white;
+    }
+    &__line-4 {
+        position: absolute;
+        top: 50px;
+        left: 350px;
+        height: 50px;
+        width: 5px;
+        background: white;
+    }
+    //head
+    &__step-1{
+        
+        position: absolute;
+        top: 100px;
+        left: 300px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: white;
+    }
+    //body
+    &__step-2{
+       
+        position: absolute;
+        top: 200px;
+        left: 350px;
+        width: 5px;
+        height: 250px;
+        background: white;
+    }
+    //left arm
+    &__step-3 {
+       
+        position: absolute;
+        top: 220px;
+        left: 327px;
+        width: 5px;
+        height: 150px;
+        background: white;
+        transform: rotate(18deg);
+    }
+    //right arm
+    &__step-4 {
+        
+        position: absolute;
+        top: 220px;
+        left: 373px;
+        width: 5px;
+        height: 150px;
+        background: white;
+        transform: rotate(-18deg);
+    }
+    //left leg
+    &__step-5 {
+        
+        position: absolute;
+        top: 441px;
+        left: 327px;
+        width: 5px;
+        height: 150px;
+        background: white;
+        transform: rotate(18deg);
+        
+    }
+    //right leg 
+    &__step-6 {
+        
+        position: absolute;
+        top: 441px;
+        left: 373px;
+        width: 5px;
+        height: 150px;
+        background: white;
+        transform: rotate(-18deg);
+    }
+    //death 
+    &__step-7 {
+    
+        position: absolute;
+        top: 120px;
+        left: 321px;
+        color: black;
+        font-size: 45px;
+    }
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color: rgb(0, 0, 0), $alpha: 0.8);
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        height: 400px;
+        background: rgb(17, 17, 149);
+        border-radius: 10px
+    }
+    &__close {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background-color: white;
+        font-size: 30px;
+        border-radius: 20px;
+        transition: all .2s;
+    }
+    &__close:hover {
+        background: gray;
+    }
+    &__text {
+        font-size: 50px;
+        color: white;
+        margin-bottom: 10px;
+    }
+    &__new-game {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    &__new-game-start {
+        font-size: 20px;
+        padding: 15px 40px;
+        border-radius: 5px;
+        background: white;
+    }
+}
+
+.popup-repeat-symbol {
+    transform: translate(0%,100%);
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    &__content {
+        background: rgb(164, 161, 161);
+        width: 300px;
+        height: 70px;
+        border-radius: 5px 5px 0px 0px;
+        padding-top: 10px;
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
+.popup-repeat-symbol--active {
+    transform: translate(0%,0%);
+}
+
+.word {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.secret-word-letter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: white;
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.secret-word-letter::after {
+    content: "";
+    display: block;
+    width: 42.5px;
+    height: 2px;
+    background: white;
+}
+
+.display--flex {
+    display: flex;
+}
+
+.topic {
+    display: flex;
+    &__card {
+        border-radius: 10px;
+        width: 250px;
+        height: 250px;
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+    &__card i {
+        transition: all .2s;
+    }
+    &__card:hover i{
+        font-size: 40px;
+        color: gray;
+    }
+}
